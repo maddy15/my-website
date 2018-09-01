@@ -1,0 +1,108 @@
+//remove folder
+rm -rf "folder-name"
+
+//git history
+git log --oneline --graph --decorate --all
+
+//aliasing
+git config --global alias.hist "log --oneline --graph --decorate --all"
+
+//checking the aliases made
+git config --global --list
+
+//using alias
+git "alias name"
+eg. git hist
+
+//renaming file
+git mv origFileName NewFileName
+
+//deleting file
+git rm filename
+
+//ignoring files
+touch .gitignore
+//put files to be ignored in .gitignore file
+
+//creating tag for labelling
+git tag "tagname"
+
+//anotated tags
+git tag -a "tagname" -m "message"
+eg. git tag -a v1.0 -m "Release 1.0"
+
+//stashing
+git stash
+git stash list
+
+//time travel reset
+//3 types of reset
+git reset "id" --soft
+git reset "id" --mixed
+git reset "id" --hard
+
+//time travel reset via reflog
+git reflog
+git reset --hard "id"
+
+#####github#####
+
+//linking to gitbuh repo
+git remote add origin "url"
+
+//push changes to github
+git push -u origin master --tags
+
+//push files in github or changes
+git push origin master
+
+//generating ssh key
+mkdir .ssh //if it doesnt exists
+ssh-keygen -t rsa -C "fawlaferez123@gmail.com" -> email
+
+//loggin using ssh
+ssh -T git@github.com
+
+//cloning
+git clone "url under github repository clone"
+
+//disabling the long message when pushing to github
+git config --global push.default simple
+
+//fetching
+git fetch
+
+git fetch -p //removing dead branch
+
+//then
+git pull
+
+//pulling all not depending on branch to branch
+git pull --all
+
+//deleting branch on the remote locally
+git push origin :"branchname"
+
+//changing reference when renaming repository
+git remote set-url origin "newCloneURL"
+
+//deleting remote branch via command prompt
+git push origin :"branchName"
+
+//passing local branch to remote branch and linking
+git push -u origin "branchName"
+
+//pushing single tag
+git push origin "tagname"
+
+//pushing all tags at once
+git push --tags
+
+//deleting tags on github locally
+git push origin :v0.2-alpha
+
+//updating tags
+git tag -f unstable "commit id"
+
+//force update
+git push --force origin "tagName"
